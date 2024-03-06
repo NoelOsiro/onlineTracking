@@ -6,6 +6,7 @@ import PageTitle from './components/PageTitle';
 import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
 import Subscribers from './pages/Calendar';
+import Shipping from './pages/Shipping';
 import Chart from './pages/Chart';
 import ECommerce from './pages/Dashboard/ECommerce';
 import FormElements from './pages/Form/FormElements';
@@ -19,6 +20,7 @@ import Buttons from './pages/UiElements/Buttons';
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const { pathname } = useLocation();
+  
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,6 +50,15 @@ function App() {
             <>
               <PageTitle title="Subscribers" />
               <Subscribers />
+            </>
+          }
+        />
+        <Route
+          path="/shipping"
+          element={
+            <>
+              <PageTitle title="Shipping" />
+              <Shipping />
             </>
           }
         />

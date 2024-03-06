@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CardDataStats from '../../components/CardDataStats';
 import ChartOne from '../../components/Charts/ChartOne';
 import ChartThree from '../../components/Charts/ChartThree';
@@ -9,6 +9,18 @@ import TableOne from '../../components/Tables/TableOne';
 import DefaultLayout from '../../layout/DefaultLayout';
 
 const ECommerce: React.FC = () => {
+  const isAuth = false;
+
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      // You can perform asynchronous authentication checks here
+      if (!isAuth) {
+        // Redirect the user to the sign-in page
+        window.location.href = '/auth/signin';
+      }
+    };
+    checkAuthentication();
+  }, [isAuth]); 
   return (
     <DefaultLayout>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
